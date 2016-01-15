@@ -1,10 +1,11 @@
 class AuthorsController < ApplicationController
+  respond_to :html, :xml, :json
   before_action :set_author, only: [:show, :edit, :update, :destroy]
 
   # GET /authors
   # GET /authors.json
-  def index
-    @authors = Author.all
+  def index 
+    respond_with Author.all
   end
 
   # GET /authors/1
@@ -24,17 +25,8 @@ class AuthorsController < ApplicationController
   # POST /authors
   # POST /authors.json
   def create
-    @author = Author.new(author_params)
-
-    respond_to do |format|
-      if @author.save
-        format.html { redirect_to @author, notice: 'Author was successfully created.' }
-        format.json { render :show, status: :created, location: @author }
-      else
-        format.html { render :new }
-        format.json { render json: @author.errors, status: :unprocessable_entity }
-      end
-    end
+    author = Author.create(author_params)
+    respond_with author
   end
 
   # PATCH/PUT /authors/1
@@ -69,6 +61,6 @@ class AuthorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def author_params
-      params.require(:author).permit(:firstname, :secondname, :age)
+      params.require(:author).permit(:firstname, :secondname)
     end
 end

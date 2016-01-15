@@ -25,7 +25,22 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 
 #Gem of Donia
+gem 'responders'
+gem 'sprockets', '2.12.3'
 gem 'angular-rails-templates'
+gem 'angular_rails_csrf'
+gem 'angular-ui-bootstrap-rails'
+gem 'will_paginate'
+# provides a simple and extremely flexible way to upload files
+gem 'carrierwave'
+# for displaying toastr success, erro, info ..
+gem 'ng-toaster-rails'
+# angular-ui-select-rails is a asset pipeline friendly version of AngularJS ui-select
+gem 'angular-ui-select-rails'
+
+
+# devise for authentication
+gem 'devise'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,0 +1,37 @@
+<h1>Add New Author</h1>
+<form  class="form-horizontal">
+  <div class="form-group">
+		      	<label class="control-label col-sm-3">First Name:</label> 
+		      	<div class="col-sm-6">
+		        <input type="text" class="form-control" placeholder="First Name" ng-model="Author.firstname"></input>
+		        </div>
+  </div>
+  <div class="form-group">
+		      	<label class="control-label col-sm-3">Second Name:</label> 
+		      	<div class="col-sm-6">
+		        <input type="text" class="form-control" placeholder="Last Name" ng-model="Author.secondname"></input>
+		        </div>
+  </div>
+  <button type="button" class="btn btn-info" ng-click="addAuthor()">Add Author</button>
+</form>
+<h1>Listing Authors</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr ng-repeat="author in authors">
+        <td>{{ author.firstname }}</td>
+        <td>{{ author.secondname }}</td>
+      </tr>
+  </tbody>
+  <h1>{{remarque}}</h1>
+</table>
+
+<br>
+
+<toaster-container></toaster-container>
