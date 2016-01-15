@@ -13,17 +13,16 @@
   </thead>
 
   <tbody>
-    <% @authors.each do |author| %>
-      <tr>
-        <td><%= author.firstname %></td>
-        <td><%= author.secondname %></td>
-        <td><%= author.age %></td>
+      <tr ng-repeat="author in authors">
+        <td>{{ author.firstname }}</td>
+        <td>{{author.secondname }}</td>
+        <td>{{author.age }}</td>
         <td><%= link_to 'Show', author %></td>
         <td><%= link_to 'Edit', edit_author_path(author) %></td>
         <td><%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
   </tbody>
+  <h1>{{remarque}}</h1>
 </table>
 
 <br>
