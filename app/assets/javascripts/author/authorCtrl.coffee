@@ -66,7 +66,7 @@
       age: $scope.Book.title
       price: $scope.Book.price
       author_id: parseInt($scope.Book.authorId)
-    $scope.$broadcast 'Reloadbooks', 'Some data'
+    $scope.$broadcast 'ReloadBooks', 'Some data'
     $scope.Book.title=""
     $scope.Book.price=""
     $scope.Book.authorId=""
