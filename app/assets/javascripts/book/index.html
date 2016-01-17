@@ -1,0 +1,45 @@
+<h1>Add New Book</h1>
+<form  class="form-horizontal">
+  <div class="form-group">
+		      	<label class="control-label col-sm-3"> Title:</label> 
+		      	<div class="col-sm-6">
+		        <input type="text" class="form-control" placeholder="Title" ng-model="Book.title"></input>
+		        </div>
+  </div>
+  <div class="form-group">
+		      	<label class="control-label col-sm-3">Price:</label> 
+		      	<div class="col-sm-6">
+		        <input type="text" class="form-control" placeholder="price" ng-model="Book.price"></input>
+		        </div>
+  </div>
+  <div class="form-group">
+		      	<label class="control-label col-sm-3">Author:</label> 
+		      	<div class="col-sm-6">
+		      		<select class="form-control" ng-model="Book.authorId">
+			         <option ng-repeat="item in authors" value="{{item.id}}">{{item.firstname}} {{item.secondname}}</option>
+			        </select>
+		        </div>
+  </div>
+   
+  <button type="button" class="btn btn-info" ng-click="addBook()">Add Book</button>
+</form>
+<h1>Listing Books</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Author</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr ng-repeat="book in books">
+        <td>{{ book.title }}</td>
+        <td>{{ book.price }}</td>
+        <td>{{ book.author.firstname }} {{ book.author.secondname }}</td>
+      </tr>
+  </tbody> 
+</table>
+<h1>{{remarqueBook}}</h1>
+<br>
